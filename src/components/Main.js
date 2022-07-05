@@ -1,3 +1,4 @@
+import React from 'react';
 import Experience from './CVForm/Experience';
 import Education from './CVForm/Education';
 import Information from './CVForm/Experience'
