@@ -6,6 +6,7 @@ const TemplateCV = {
         email: "",
         phone: "",
         address: "",
+        description: "",
         },
     ],
 };
