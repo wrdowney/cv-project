@@ -15,8 +15,12 @@ const Main = () => {
             <Information 
                 mode = {this.state.togglePreview}
             />
-            <Education />
-            <Experience />
+            <Education 
+                mode = {this.state.togglePreview}
+            />
+            <Experience 
+                mode = {this.state.togglePreview}
+            />
         </div>
     );   
 }
