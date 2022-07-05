@@ -1,14 +1,24 @@
 import React from "react";
+import Section from "../../utils/Section";
 
-const Information = () => {
-    return (
-        <div>
-            <div className="name">
-                <h2>First Name</h2>
-                <h2>Last Name</h2>
-            </div>
-        </div>
-    );
+const Information = (
+    mode,
+) => {
+    if(!mode.mode) {
+        return(
+            <Section title="Information123">
+                test123
+            </Section>
+        );
+    }
+    else {
+        return(
+            <Section title="Information1">
+                test
+            </Section>
+        );
+    }
+    
 }
 
 export default Information;

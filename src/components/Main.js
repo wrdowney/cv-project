@@ -25,9 +25,10 @@ class Main extends React.Component {
                 <Switch 
                     onChange={() => this.changeMode()}
                     label="Preview"
-                >
-                </Switch>
-                <Information />
+                />
+                <Information 
+                    mode = {this.state.togglePreview}
+                />
                 <Education />
                 <Experience />
             </div>
