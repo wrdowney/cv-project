@@ -1,9 +1,12 @@
 import React from "react";
+import Section from '../../utils/Section';
 
 const Education = () => {
-    <div>
-        123
-    </div>
+    return(
+        <Section title="Education">
+
+        </Section>
+    );
 }
 
 export default Education;
