@@ -4,24 +4,39 @@ import Experience from './CVForm/Experience';
 import Education from './CVForm/Education';
 import Switch from '../utils/Switch';
 
-const Main = () => {
-    return(
-        <div className="m-4 p-4 h-full shadow-md rounded-md border-2">
-            <Switch 
-                onChange={changeMode()}
-                label="Preview"
-            >
-            </Switch>
-            <Information />
-            <Education />
-            <Experience />
-        </div>
-    );
+class Main extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            togglePreview: false,
+        }
+    }
+    changeMode() {
+        this.setState((prevState) => 
+        {   
+            return {
+                togglePreview: !prevState.togglePreview
+            }
+        });
+    }
+    render() {
+        return (
+            <div className="m-4 p-4 h-full shadow-md rounded-md border-2">
+                <Switch 
+                    onChange={() => this.changeMode()}
+                    label="Preview"
+                >
+                </Switch>
+                <Information />
+                <Education />
+                <Experience />
+            </div>
+        );
+    }
+
+    
 }
 
-function changeMode(mode) {
-    return () => {
-    }
-}
+
 
 export default Main;
