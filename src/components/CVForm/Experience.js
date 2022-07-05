@@ -1,9 +1,10 @@
 import React from "react"
-import Section from "../../utils/Section"
 
-const Experience = () => {
+const Experience = (
+    mode,
+) => {
     return (
-        <Section title="Experience"></Section>
+        <></>
     );
     
 }
