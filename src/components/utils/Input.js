@@ -8,7 +8,7 @@ const Input = ({
     value = "",
 }) => {
     return (
-        <input type={type} name={name} placeholder={placeholder} onChange={onChange} value={value} className="border-2 rounded-md focus:ring-0"></input>
+        <input type={type} name={name} placeholder={placeholder} onChange={onChange} value={value} className="border-2 rounded-md"></input>
     );
 } 
 
