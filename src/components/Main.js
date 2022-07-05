@@ -1,7 +1,7 @@
 import React from 'react';
+import Information from './CVForm/Information';
 import Experience from './CVForm/Experience';
 import Education from './CVForm/Education';
-import Information from './CVForm/Experience'
 
 const Main = () => {
     return(
