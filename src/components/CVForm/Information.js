@@ -4,7 +4,7 @@ import Input from "../utils/Input";
 const Information = ({mode, handleChange, cv}) => {
     if(!mode) {
         return(
-            <div className=" flex flex-col gap-2">
+            <div className=" flex flex-col gap-2 mb-4">
                 <h2 className="font-bold border-b-2 text-xl">Information</h2>
                 <Input type="text" name="firstName" placeholder="First Name" onChange={(e) => handleChange(e)} value={cv.firstName}/>
                 <Input type="text" name="lastName" placeholder="Last Name" onChange={(e) => handleChange(e)} value={cv.lastName}/>
