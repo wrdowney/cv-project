@@ -8,7 +8,7 @@ const Input = ({
     value,
 }) => {
     return (
-        <input type={type} name={name} placeholder={placeholder} value={value} onChange={onChange} />
+        <input type={type} name={name} placeholder={placeholder} value={value} onChange={onChange}></input>
     );
 } 
 
