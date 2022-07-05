@@ -22,7 +22,7 @@ const Main = () => {
     };
  
     return (
-        <div className="p-4 h-full shadow-md rounded-md border-2 m-4 w-5/6">
+        <div className="p-4 shadow-md rounded-lg border-2 m-4 w-5/6 bg-white">
             <Switch 
                 onChange={() => { setMode(!mode); }}
                 label="Preview"
