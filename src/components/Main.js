@@ -33,10 +33,10 @@ const Main = () => {
                 cv = {cv.information}
             />
             <Education 
-                //mode = {this.state.togglePreview}
+                mode = {mode}
             />
             <Experience 
-                //mode = {this.state.togglePreview}
+                mode = {mode}
             />
         </div>
     );
