@@ -2,9 +2,9 @@ import React from "react"
 import Button from "../utils/Button";
 import ExperienceItem from "./ExperienceItem"
 
-const Experience = ({mode, onChange, experience, onAdd, onDelete})=> {
+const Experience = ({previewMode, onChange, experience, onAdd, onDelete})=> {
 
-    if(!mode) {
+    if(!previewMode) {
         const experienceItems = experience.map((experienceItem)=> (
             //console.log(experienceItem),
             <ExperienceItem key={experienceItem.id} id={experienceItem.id} experience={experienceItem} onChange={onChange} onDelete={onDelete}/>
@@ -39,4 +39,4 @@ const Experience = ({mode, onChange, experience, onAdd, onDelete})=> {
     }  
 }
 
-export default Experience
+export default Experience;

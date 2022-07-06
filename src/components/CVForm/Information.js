@@ -1,8 +1,8 @@
 import React from "react";
 import Input from "../utils/Input";
 
-const Information = ({mode, handleChange, cv}) => {
-    if(!mode) {
+const Information = ({previewMode, handleChange, cv}) => {
+    if(!previewMode) {
         return(
             <div className=" flex flex-col gap-2 mb-4">
                 <h2 className="font-bold border-b-2 text-xl">Information</h2>

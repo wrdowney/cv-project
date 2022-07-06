@@ -2,8 +2,8 @@ import React from "react";
 import Button from "../utils/Button";
 import EducationItem from "./EducationItem";
 
-const Education = ({mode, onChange, education, onAdd, onDelete}) => {
-    if(!mode) {
+const Education = ({previewMode, onChange, education, onAdd, onDelete}) => {
+    if(!previewMode) {
         const educationItems = education.map((educationItem)=> (
             <EducationItem key={educationItem.id} id={educationItem.id} education={educationItem} onChange={onChange} onDelete={onDelete}/>
         ));

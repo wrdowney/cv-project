@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Main = () => {
     const [cv, setCv] = useState(TemplateCV);
-    const [mode, setMode] = useState(false);
+    const [previewMode, changePreviewMode] = useState(false);
 
     const handleChangeInformation = (e) => {
         const { name, value } = e.target;
@@ -105,23 +105,23 @@ const Main = () => {
     return (
         <div className="p-4 shadow-md rounded-lg border-2 m-4 w-5/6 bg-white mb-14 overflow-auto h-full">
             <Switch 
-                onChange={() => { setMode(!mode); }}
+                onChange={() => { changePreviewMode(!previewMode); }}
                 label="Preview"
             />
             <Information 
-                mode = {mode}
+                previewMode = {previewMode}
                 handleChange = {handleChangeInformation}
                 cv = {cv.information}
             />
             <Education 
-                mode = {mode}
+                previewMode = {previewMode}
                 onChange = {handleChangeEducation}
                 onAdd = {handleAddEducation}
                 onDelete = {handleDeleteEducation}
                 education = {cv.education}
             />
             <Experience 
-                mode = {mode}
+                previewMode = {previewMode}
                 onChange = {handleChangeExperience}
                 experience = {cv.experience}
                 onAdd = {handleAddExperience}
