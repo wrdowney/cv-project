@@ -20,7 +20,7 @@ const Education = ({previewMode, onChange, education, onAdd, onDelete}) => {
             <div key={educationItem.id}>
                 <h3 className="text-xl font-bold">{educationItem.school}</h3>
                 <div className="flex justify-between">
-                    <p className="font-bold text-sm">{educationItem.degree}</p>
+                    <p className="font-bold text-sm">{educationItem.degree} {educationItem.fieldOfStudy}</p>
                     <p className="text-sm">{educationItem.startDate}-{educationItem.endDate}</p>
                 </div>
                 <p className="text-sm">{educationItem.city}</p>
