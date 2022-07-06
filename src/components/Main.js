@@ -20,9 +20,21 @@ const Main = () => {
             },
         }));    
     };
+
+    function handleChangeExperience(e) {
+        const { name, value } = e.target;
+
+        setCv((prevState) => ({
+            ...prevState,
+            experience: {
+                ...prevState.experience,
+                [name]: value,
+            },
+        }));    
+    };
  
     return (
-        <div className="p-4 shadow-md rounded-lg border-2 m-4 w-5/6 bg-white">
+        <div className="p-4 shadow-md rounded-lg border-2 m-4 w-5/6 bg-white mb-14 overflow-auto h-full">
             <Switch 
                 onChange={() => { setMode(!mode); }}
                 label="Preview"
@@ -37,6 +49,8 @@ const Main = () => {
             />
             <Experience 
                 mode = {mode}
+                onChange = {handleChangeExperience}
+                cv = {cv.experience}
             />
         </div>
     );
