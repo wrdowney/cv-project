@@ -18,8 +18,22 @@ const Experience = ({mode, onChange, experience, onAdd, onDelete})=> {
         );
     }
     else {
+        const displayExperienceItems = experience.map((experienceItem)=> (
+            <div key={experienceItem.id}>
+                <h3 className="text-xl font-bold">{experienceItem.position}</h3>
+                <div className="flex justify-between">
+                    <p className="font-bold text-sm">{experienceItem.company}</p>
+                    <p className="text-sm">{experienceItem.startDate}-{experienceItem.endDate}</p>
+                </div>
+                <p className="text-sm">{experienceItem.city}</p>
+                <p>{experienceItem.description}</p>
+                
+            </div>
+        ));
         return (
             <div>
+                <h1 className="font-bold text-3xl border-b-2 mt-2">Experience</h1>
+                {displayExperienceItems}
             </div>
         );
     }  
