@@ -21,6 +21,17 @@ const TemplateCV = {
         endDate: "",
         description: "",
         }
+    ],
+    education: [
+        {
+            id: uuidv4(),
+            school: "",
+            degree: "",
+            fieldOfStudy: "",
+            startDate: "",
+            endDate: "",
+            description: "",
+        }
     ]
 };
 
