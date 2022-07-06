@@ -10,7 +10,7 @@ const Main = () => {
     const [cv, setCv] = useState(TemplateCV);
     const [mode, setMode] = useState(false);
 
-    function handleChangeInformation(e) {
+    const handleChangeInformation = (e) => {
         const { name, value } = e.target;
 
         setCv((prevState) => ({
@@ -61,6 +61,47 @@ const Main = () => {
             return { ...prevState, experience: [...newExperience] }
         })
     }
+
+    const handleChangeEducation = (e, id) => {
+        const { name, value } = e.target  
+        setCv((prevState) => {
+          const newEducation = prevState.education.map((educationItem) => {
+            if (educationItem.id === id) {
+              return { ...educationItem, [name]: value }
+            }
+            return educationItem
+          })
+          return { ...prevState, education: [...newEducation] }
+        })
+    }
+
+    const handleAddEducation = () => {
+        setCv((prevState) => ({
+          ...prevState,
+          education: [
+            ...prevState.education,
+            {
+                id: uuidv4(),
+                school: "",
+                degree: "",
+                fieldOfStudy: "",
+                startDate: "",
+                endDate: "",
+                description: "",
+            },
+          ],
+        }))
+    }
+
+    const handleDeleteEducation = (id) => {
+        setCv((prevState) => {
+            const newEducation = prevState.education.filter(
+                (educationItem) => educationItem.id !== id
+            )
+            return { ...prevState, education: [...newEducation] }
+        });
+    }
+
     return (
         <div className="p-4 shadow-md rounded-lg border-2 m-4 w-5/6 bg-white mb-14 overflow-auto h-full">
             <Switch 
@@ -74,6 +115,10 @@ const Main = () => {
             />
             <Education 
                 mode = {mode}
+                onChange = {handleChangeEducation}
+                onAdd = {handleAddEducation}
+                onDelete = {handleDeleteEducation}
+                education = {cv.education}
             />
             <Experience 
                 mode = {mode}
@@ -84,8 +129,7 @@ const Main = () => {
             />
         </div>
     );
-    
-    
+
 }
 
 export default Main;
