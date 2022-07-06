@@ -4,6 +4,7 @@ import Experience from './CVForm/Experience';
 import Education from './CVForm/Education';
 import Switch from './utils/Switch';
 import TemplateCV from './utils/TemplateCV';
+import { v4 as uuidv4 } from 'uuid';
 
 const Main = () => {
     const [cv, setCv] = useState(TemplateCV);
@@ -21,18 +22,45 @@ const Main = () => {
         }));    
     };
 
-    function handleChangeExperience(e) {
-        const { name, value } = e.target;
-
+    const handleChangeExperience = (e, id) => {
+        const { name, value } = e.target  
+        setCv((prevState) => {
+          const newExperience = prevState.experience.map((experienceItem) => {
+            if (experienceItem.id === id) {
+              return { ...experienceItem, [name]: value }
+            }
+            return experienceItem
+          })
+          return { ...prevState, experience: [...newExperience] }
+        })
+      }
+    
+    const handleAddExperience = () => {
         setCv((prevState) => ({
-            ...prevState,
-            experience: {
-                ...prevState.experience,
-                [name]: value,
+          ...prevState,
+          experience: [
+            ...prevState.experience,
+            {
+                id: uuidv4(),
+                company: "",
+                position: "",
+                city: "",
+                startDate: "",
+                endDate: "",
+                description: "",
             },
-        }));    
-    };
- 
+          ],
+        }))
+    }
+    
+    const handleDeleteExperience = (id) => {
+        setCv((prevState) => {
+            const newExperience = prevState.experience.filter(
+                (experienceItem) => experienceItem.id !== id
+            )
+            return { ...prevState, experience: [...newExperience] }
+        })
+    }
     return (
         <div className="p-4 shadow-md rounded-lg border-2 m-4 w-5/6 bg-white mb-14 overflow-auto h-full">
             <Switch 
@@ -50,7 +78,9 @@ const Main = () => {
             <Experience 
                 mode = {mode}
                 onChange = {handleChangeExperience}
-                cv = {cv.experience}
+                experience = {cv.experience}
+                onAdd = {handleAddExperience}
+                onDelete = {handleDeleteExperience}
             />
         </div>
     );
