@@ -9,6 +9,16 @@ const TemplateCV = {
         description: "",
         },
     ],
+    experience: [
+        {
+        company: "",
+        position: "",
+        city: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+        }
+    ]
 };
 
 export default TemplateCV;
