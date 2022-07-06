@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const TemplateCV = {
     information: [
         {
@@ -11,6 +13,7 @@ const TemplateCV = {
     ],
     experience: [
         {
+        id: uuidv4(),
         company: "",
         position: "",
         city: "",
